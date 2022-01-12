@@ -1,58 +1,55 @@
 import {
-    acceptAllCookies, BaseUrl,
-    getLoginButton,
-    getNavDiv,
-    getStatusBar,
-    getStatusBarText, getUrl,
-    openWebsite,
-    testVisibility
-} from "../../helpers";
+  acceptAllCookies,
+  BaseUrl,
+  getLoginButton,
+  getNavDiv,
+  getUrl,
+  openWebsite,
+  testVisibility,
+} from "../helpers";
 import {
-    checkLogout,
-    getLoginConfirmButton, getLogoutButtonInNav, getLogoutButtonInUserProfile,
-    getPasswordInput,
-    getPopup,
-    getUsernameInput, login, logout,
-    PASSWORD,
-    USERNAME
-} from "../../helpers/login";
+  checkLogout,
+  getLogoutButtonInNav,
+  getLogoutButtonInUserProfile,
+  login,
+  logout,
+} from "../helpers/login";
 
-describe('Log in', function () {
+describe("Log in", function () {
+  beforeEach(() => {
+    openWebsite();
+    acceptAllCookies();
+  });
 
-    beforeEach(() => {
-        openWebsite();
-        acceptAllCookies();
-    });
+  it("Log in", () => {
+    login();
+    logout();
+  });
 
-    it('Log in', () => {
-        login();
-        logout();
-    });
+  it("Log out using top-down menu", () => {
+    login();
 
-    it('Log out using top-down menu', () => {
-        login();
+    getLoginButton().trigger("mouseover");
+    testVisibility(getNavDiv());
 
-        getLoginButton().trigger('mouseover');
-        testVisibility(getNavDiv());
+    let button = getLogoutButtonInNav();
+    testVisibility(button);
+    // button.should('be.enabled');
+    button.click();
 
-        let button = getLogoutButtonInNav();
-        testVisibility(button);
-        // button.should('be.enabled');
-        button.click();
+    checkLogout();
+  });
 
-        checkLogout();
-    });
+  it("Log out through user profile", () => {
+    login();
 
-    it('Log out through user profile', () => {
-        login();
+    getLoginButton().click();
+    getUrl().should("eq", `${BaseUrl}muj-profil/order/default?locale=cs`);
 
-        getLoginButton().click();
-        getUrl().should('eq', `${BaseUrl}muj-profil/order/default?locale=cs`);
+    let logoutButton = getLogoutButtonInUserProfile();
+    testVisibility(logoutButton);
+    logoutButton.click();
 
-        let logoutButton = getLogoutButtonInUserProfile();
-        testVisibility(logoutButton);
-        logoutButton.click();
-
-        checkLogout();
-    });
+    checkLogout();
+  });
 });
