@@ -2,7 +2,6 @@ name: Cypress end-to-end Kosik testing
 on: [push]
 jobs:
   cypress:
-    if: github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎
