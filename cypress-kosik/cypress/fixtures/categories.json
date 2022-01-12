@@ -1,0 +1,67 @@
+[
+  {
+    "category": 1,
+    "name": "Pekárna a cukrárna",
+    "numSubcategories": 11
+  },
+  {
+    "category": 2,
+    "name": "Ovoce a zelenina",
+    "numSubcategories": 9
+  },
+  {
+    "category": 3,
+    "name": "Maso a ryby",
+    "numSubcategories": 13
+  },
+  {
+    "category": 4,
+    "name": "Uzeniny a lahůdky",
+    "numSubcategories": 15
+  },
+  {
+    "category": 5,
+    "name": "Mléčné a chlazené",
+    "numSubcategories": 14
+  },
+  {
+    "category": 6,
+    "name": "Mražené",
+    "numSubcategories": 11
+  },
+  {
+    "category": 7,
+    "name": "Trvanlivé",
+    "numSubcategories": 14
+  },
+  {
+    "category": 8,
+    "name": "Nápoje",
+    "numSubcategories": 16
+  },
+  {
+    "category": 9,
+    "name": "Sociální výživa",
+    "numSubcategories": 13
+  },
+  {
+    "category": 10,
+    "name": "Drogerie a kosmetika",
+    "numSubcategories": 19
+  },
+  {
+    "category": 11,
+    "name": "Domácnost a zahrada",
+    "numSubcategories": 14
+  },
+  {
+    "category": 12,
+    "name": "Děti",
+    "numSubcategories": 13
+  },
+  {
+    "category": 13,
+    "name": "Mazlíčci",
+    "numSubcategories": 4
+  }
+]

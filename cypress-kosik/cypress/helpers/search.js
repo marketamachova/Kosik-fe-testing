@@ -1,3 +1,20 @@
+import {getCartPreview, getShoppingCartButton} from "./cart";
+
+export const doSearching = (input) => {
+    getSearchInput().type(input);
+    cy.wait(500);
+    getSearchHintsModal().should('be.visible');
+    getSearchButton().click();
+    cy.wait(2000);
+};
+
+export const checkCartIsEmpty = () => {
+    getShoppingCartButton().click();
+
+    getCartPreview().should('be.visible');
+    getCartPreview().should('contain', 'prázdný');
+};
+
 export const getSearchInput = () => {
     return cy.get('.product-search__input');
 };
@@ -44,20 +61,20 @@ export const getListedProductsNames = () => {
 
 export const getSubcategories = () => {
     return  cy.get('.nav-subcategory')
-}
+};
 
 export const getFirstRadioButton = () => {
     return cy.get('.form-radio__label--checked > .form-radio__input')
-}
+};
 
 export const getCategoryButton = (catNumber) => {
     return cy.get(`:nth-child(${catNumber}) > .nav-link`);
-}
+};
 
 export const getSubcategoryButton = (subcatNumber) => {
     return cy.get(`:nth-child(${subcatNumber}) > .nav-subcategory`);
-}
+};
 
 export const getPopupBox = () => {
     return cy.get('.popup__box');
-}
+};

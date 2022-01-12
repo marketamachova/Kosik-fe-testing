@@ -1,4 +1,24 @@
+import {testVisibility} from "./index";
+
 export const ADDRESS = 'Novovysočanská 695/42, 19000 Praha 9 - Vysočany';
+
+export const addProductToCartLoggedIn = () => {
+    getFirstProduct().first().find(".content__info h2.name").then(h2 => {
+        getFirstProduct().find("button").first().click();
+
+        let item = getItemInCartName();
+        testVisibility(item);
+        item.should("contain", h2.text());
+    })
+};
+
+export const removeAllProductsFromCart = () => {
+    let button = getAllCloseButtonsInCart();
+    if (button) {
+        button.click({ multiple: true })
+    }
+};
+
 
 export const getShoppingCartButton = () => {
     return cy.get('.link-my-cart');
@@ -49,6 +69,10 @@ export const getProductPriceInCart = () => {
 };
 
 export const getRemoveProdFromCartButton = () => {
+    return cy.get('.product-row__control-close');
+};
+
+export const getAllCloseButtonsInCart = () => {
     return cy.get('.product-row__control-close');
 };
 

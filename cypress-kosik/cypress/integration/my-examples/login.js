@@ -1,34 +1,21 @@
-import {acceptAllCookies, getLoginButton, openWebsite, testVisibility} from "../../helpers";
 import {
-    getLoginConfirmButton,
+    acceptAllCookies, BaseUrl,
+    getLoginButton,
+    getNavDiv,
+    getStatusBar,
+    getStatusBarText, getUrl,
+    openWebsite,
+    testVisibility
+} from "../../helpers";
+import {
+    checkLogout,
+    getLoginConfirmButton, getLogoutButtonInNav, getLogoutButtonInUserProfile,
     getPasswordInput,
     getPopup,
-    getUsernameInput,
+    getUsernameInput, login, logout,
     PASSWORD,
     USERNAME
 } from "../../helpers/login";
-
-export const login = () => {
-    let loginButton = getLoginButton();
-    testVisibility(loginButton);
-    loginButton.click();
-
-    testVisibility(getPopup());
-
-    let usernameInput = getUsernameInput();
-    testVisibility(usernameInput);
-    usernameInput.type(USERNAME);
-
-    let pwdInput = getPasswordInput();
-    testVisibility(pwdInput);
-    usernameInput.type(PASSWORD);
-
-    let loginConfirmButton = getLoginConfirmButton();
-    testVisibility(loginConfirmButton);
-    loginConfirmButton.click();
-
-    getPopup().should('not.exist');
-};
 
 describe('Log in', function () {
 
@@ -39,17 +26,33 @@ describe('Log in', function () {
 
     it('Log in', () => {
         login();
+        logout();
     });
 
     it('Log out using top-down menu', () => {
         login();
 
+        getLoginButton().trigger('mouseover');
+        testVisibility(getNavDiv());
 
-    })
+        let button = getLogoutButtonInNav();
+        testVisibility(button);
+        // button.should('be.enabled');
+        button.click();
+
+        checkLogout();
+    });
 
     it('Log out through user profile', () => {
         login();
 
+        getLoginButton().click();
+        getUrl().should('eq', `${BaseUrl}muj-profil/order/default?locale=cs`);
 
-    })
+        let logoutButton = getLogoutButtonInUserProfile();
+        testVisibility(logoutButton);
+        logoutButton.click();
+
+        checkLogout();
+    });
 });
