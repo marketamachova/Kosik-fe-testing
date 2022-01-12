@@ -11,7 +11,7 @@ describe("Shopping List", () => {
         login();
     });
 
-    it("creates shopping list with 1 product", () => {
+    it("Create shopping list with 1 product", () => {
         const listName = Date.now();
 
         cy.get(".control-link > .name").click();

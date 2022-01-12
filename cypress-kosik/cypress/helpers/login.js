@@ -30,7 +30,7 @@ export const logout = () => {
     cy.wait(500);
 
     let button = getLogoutButtonInNav();
-    button.click();
+    button.first().click(); //TODO mozna blbe first
 };
 
 export const checkLogout = () => {

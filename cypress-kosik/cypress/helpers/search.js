@@ -44,7 +44,7 @@ export const getCollectiveSearchTags = () => {
 };
 
 export const getCollectiveSearchCategories = () => {
-    return cy.get('.pt-3');
+    return cy.get('.title-section .title');
 };
 
 export const getSearchHintsModal = () => {
@@ -77,4 +77,12 @@ export const getSubcategoryButton = (subcatNumber) => {
 
 export const getPopupBox = () => {
     return cy.get('.popup__box');
+};
+
+export const getSearchingTitle = () => {
+    return cy.get('.text-10')
+};
+
+export const getSearchingMessage = () => {
+    return cy.get('.col-sm-10 > .font-weight-bold');
 };
