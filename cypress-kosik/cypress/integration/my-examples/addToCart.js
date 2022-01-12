@@ -29,7 +29,6 @@ describe('Cart logged in', function () {
     };
 
     const addProductToCartLoggedIn = () => {
-        logIn(); //TODO
         getFirstProduct().first().find(".content__info h2.name").then(h2 => {
             getFirstProduct().first().find("button").click();
 
