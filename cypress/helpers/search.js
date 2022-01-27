@@ -1,7 +1,7 @@
 import {getCartPreview, getShoppingCartButton} from "./cart";
 
 export const doSearching = (input) => {
-    getSearchInput().type(input);
+    getSearchInput().clear().type(input);
     cy.wait(500);
     getSearchHintsModal().should('be.visible');
     getSearchButton().click();

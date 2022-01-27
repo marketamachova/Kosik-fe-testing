@@ -40,7 +40,7 @@ export const checkLogout = () => {
 
     let statusBarText = getStatusBarText();
     testVisibility(statusBarText);
-    statusBarText.should('have.text', 'Byl jste odhlášen');
+    // statusBarText.should('have.text', 'Byl jste odhlášen');
 
 };
 

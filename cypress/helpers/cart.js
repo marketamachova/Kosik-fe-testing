@@ -15,7 +15,7 @@ export const addProductToCartLoggedIn = () => {
 export const removeAllProductsFromCart = () => {
     let button = getAllCloseButtonsInCart();
     if (button) {
-        button.click({ multiple: true })
+        button.click()
     }
 };
 
