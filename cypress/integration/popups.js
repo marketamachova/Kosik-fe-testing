@@ -42,7 +42,7 @@ describe("Popups", function () {
     let backdrop = getModalBackdrop();
     testVisibility(backdrop);
 
-    backdrop.click();
+    backdrop.click('topLeft');
     backdrop.should("not.exist");
     getPopup().should("not.exist");
   });
