@@ -1,5 +1,34 @@
-{
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
-}
+[
+  {
+    "login": "kosik.tester@gmail.com",
+    "password": "validButWrongPwd"
+  },
+  {
+    "login": "kosik.tester@seznam.cz",
+    "password": "kosikZKS"
+  },
+  {
+    "login": "kosik.tester@seznam.cz",
+    "password": "validButWrongPwd"
+  },
+  {
+    "login": "kosik.tester@gmail.com",
+    "password": "k"
+  },
+  {
+    "login": "kosik.tester@seznam.cz",
+    "password": "k"
+  },
+  {
+    "login": "notValidEmail",
+    "password": "kosikZKS"
+  },
+  {
+    "login": "notValidEmail",
+    "password": "k"
+  },
+  {
+    "login": "kosik.tester@gmail.com",
+    "password": "kosikZKS"
+  }
+]

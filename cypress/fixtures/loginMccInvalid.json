@@ -1,0 +1,37 @@
+[
+  {
+    "email": "kosik.tester@gmail.com",
+    "password": "validButWrongPwd",
+    "error": "Nesprávné přihlašovací údaje"
+  },
+  {
+    "email": "kosik.tester@seznam.cz",
+    "password": "kosikZKS",
+    "error": "Uživatel nenalezen"
+  },
+  {
+    "email": "kosik.tester@seznam.cz",
+    "password": "validButWrongPwd",
+    "error": "Uživatel nenalezen"
+  },
+  {
+    "email": "kosik.tester@gmail.com",
+    "password": "k",
+    "error": "Nesprávné přihlašovací údaje"
+  },
+  {
+    "email": "kosik.tester@seznam.cz",
+    "password": "k",
+    "error": "Uživatel nenalezen"
+  },
+  {
+    "email": "notValidEmail",
+    "password": "kosikZKS",
+    "error": "Uživatel nenalezen"
+  },
+  {
+    "email": "notValidEmail",
+    "password": "k",
+    "error": "Uživatel nenalezen"
+  }
+]
