@@ -1,7 +1,5 @@
 import {acceptAllCookies, openWebsite} from "../helpers";
-import {login, logout} from "../helpers/login";
-import {doSearching, getCategoryButton, getSubcategories, getSubcategoryButton} from "../helpers/search";
-import {getRandomFromInterval} from "../utils/random";
+import {doSearching} from "../helpers/search";
 import {
   Alergens,
   Brand,

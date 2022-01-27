@@ -39,7 +39,6 @@ describe("Cart remove", function () {
     });
 
     removeAllProductsFromCart();
-    cy.log("hey");
   });
 
   it("Remove product from cart", () => {
